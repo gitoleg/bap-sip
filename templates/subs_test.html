@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+<div class="subslist">
+  <ul>
+    {% for entry in subs %}
+    <li><a href="{{ url_for('bir', sub=entry) }}">{{ entry }} </a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% if sub %}
+<div class="bir">
+  <p> {{ sub }} </p>
+</div>
+{% endif %}
+{% endblock %}

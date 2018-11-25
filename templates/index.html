@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block body %}
+{{ super () }}
+<div>
+  <img src={{url_for('static', filename = 'bap-logo.gif')}}>
+</div>
+
+<form method="POST">
+  {{ form.hidden_tag() }}
+  {{ form.fname.label }} {{ form.fname() }}
+  {{ form.submit() }}
+</form
+
+{# {{ wtf.quick_form(form) }} #}
+{% endblock %}
