@@ -22,23 +22,22 @@ def index():
         return redirect(url_for('bir', sub='None'))
     return render_template('index.html', form=form)
 
-@app.route('/bir/<sub>')
-def bir(sub):
-    subs=['sub1','sub2','sub3']
-    if sub == 'None':
-        return render_template('subs_test.html', subs=subs)
-    else:
-        print("choosen sub is {}".format(sub))
-        return render_template('subs_test.html', subs=subs, sub=sub)
-
 # @app.route('/bir/<sub>')
 # def bir(sub):
-#     myfile=session['myfile']
-#     proj = bap.run(myfile)
+#     subs=['sub1','sub2','sub3']
 #     if sub == 'None':
-#         return render_template('subs.html', project=proj)
+#         return render_template('subs_test.html', subs=subs)
 #     else:
-#         return render_template('subs.html', project=proj, sub=sub)
+#         return render_template('subs_test.html', subs=subs, sub=sub)
+
+@app.route('/bir/<sub>')
+def bir(sub):
+    myfile=session['myfile']
+    proj = bap.run(myfile)
+    if sub == 'None':
+        return render_template('subs.html', project=proj)
+    else:
+        return render_template('subs.html', project=proj, sub=sub)
 
 if __name__ == '__main__':
     app.run(debug=True)

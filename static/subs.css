@@ -1,0 +1,16 @@
+.subslist {
+    width:15%;
+    margin-right:2%;
+    float:left;
+    margin: 0;
+    padding: 0
+}
+
+.bir {
+    width:22%;
+    float:left;
+}
+
+.clearfix{
+    clear:both
+}

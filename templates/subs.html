@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
 
 {% block content %}
-<div class="sublist">
+<link rel="stylesheet"  href="{{ url_for('static', filename='subs.css') }}">
+<div class="subslist">
   <ul>
     {% for sub in project.program.subs %}
     <li><a href="{{ url_for('bir', sub=sub) }}"> {{ sub.name }} </a> </li>
